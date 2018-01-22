@@ -14,7 +14,12 @@ Innout aims to be simple, both in implementation and in usage. Everything is sto
 ## Usage
 Compile.
 
-Install the Innout windows service by opening the VS Developer Command prompt and running `installutil.exe Innout.exe`.
+Install the Innout windows service by opening the VS Developer Command prompt and running 
+
+```
+installutil.exe Innout.exe.
+```
+
 Start the Innout service.
 
 ### Configuration
