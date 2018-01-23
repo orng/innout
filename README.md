@@ -1,11 +1,13 @@
 # Innout
-In-N-Out - simple time tracking
+In-N-Out - simple time tracking on Windows
+
+Innout runs as a Windows service and keeps track of when you lock/unlock your computer.
 
 # Disclaimer
 This is currently a quick hack and not stable, properly tested software, use on your own risk.
 
 ## Motivation
-Let's say you work flexible hours so it varies when you arrive at work an when you leave from work. You need to keep track of when you arrive and when you leave.
+Let's say you work flexible hours so it varies when you arrive at work and when you leave from work. You need to keep track of when you arrive and when you leave.
 Innout runs as a Windows service and registers the first login or screen unlock of the day as well as the last logout/screen lock so that you can easily see when you arrived at your computer and the last time you left.
 
 ### Design goals
