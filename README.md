@@ -39,6 +39,6 @@ By default the times will be written to a file in the same location as the execu
 ```
 
 ## Limitations
-Innout does not play well with pauses, so if you leave during the day this will not be registered, likewise if you bring your computer home from work and open it during the evening.
+Innout does not understand pauses, so if you leave during the day this will not be registered, likewise if you bring your computer home from work and open it during the evening.
 Innout can not discern intent, if you log on to your computer to play games, Innout will not know this.
 Things probably don't work great if you work past midnight.
