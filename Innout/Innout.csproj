@@ -49,6 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="TimeRegistrations.cs" />
     <Compile Include="FileIO.cs" />
     <Compile Include="Innout.cs">
       <SubType>Component</SubType>
@@ -82,6 +83,11 @@
     <EmbeddedResource Include="ProjectInstaller.resx">
       <DependentUpon>ProjectInstaller.cs</DependentUpon>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="10.0.3" />
+    <PackageReference Include="NodaTime" Version="3.0.0" />
+    <PackageReference Include="NodaTime.Serialization.JsonNet" Version="2.3.0" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

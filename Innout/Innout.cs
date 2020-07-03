@@ -8,6 +8,7 @@ using System.ServiceProcess;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Win32;
+using NodaTime;
 
 namespace Innout
 {
@@ -88,6 +89,12 @@ namespace Innout
 				AddNewIn(registrations);
 				FileIO.WriteRegistrations(registrations);
 			}
+			
+			var detailedRegs = FileIO.GetDetailedRegistrations();
+			var clock = SystemClock.Instance.GetCurrentInstant();
+			var today = detailedRegs[clock.InUtc().Date];
+			today.Add(new Registration(){In = clock.InUtc().TimeOfDay});
+			FileIO.WriteDetailedRegistrations(detailedRegs);
 		}
 
 		/// <summary>
@@ -98,6 +105,18 @@ namespace Innout
 			List<TimeRegistration> registrations = FileIO.GetRegistrations();
 			UpdateLastOut(registrations);
 			FileIO.WriteRegistrations(registrations);
+			
+			var detailedRegs = FileIO.GetDetailedRegistrations();
+			var clock = SystemClock.Instance.GetCurrentInstant();
+			var today = detailedRegs[clock.InUtc().Date];
+			var lastIn = today.LastOrDefault();
+			if (lastIn == null)
+			{
+				// TODO: handle past midnight and past month change
+				return; 
+			}
+			lastIn.Out = clock.InUtc().TimeOfDay;
+			FileIO.WriteDetailedRegistrations(detailedRegs);
 		}
 
 		/// <summary>
