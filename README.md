@@ -24,6 +24,8 @@ installutil.exe Innout.exe.
 
 Start the Innout service.
 
+Once the service is running Innout will automatically write the times when you lock/unlock your computer to a file with a name in the form of `{month}{year}.txt` e.g. `jan18.txt` for January 2018. For information on how to configure where this file is written see the 'Configuration' below.
+
 ### Configuration
 By default the times will be written to a file in the same location as the executable. To change the location of the outputted files edit Innout.exe.config and set the FileDirectory property to wherever you want the files written.
 ```
@@ -39,6 +41,6 @@ By default the times will be written to a file in the same location as the execu
 ```
 
 ## Limitations
-Innout does not play well with pauses, so if you leave during the day this will not be registered, likewise if you bring your computer home from work and open it during the evening.
+Innout does not understand pauses, so if you leave during the day this will not be registered, likewise if you bring your computer home from work and open it during the evening.
 Innout can not discern intent, if you log on to your computer to play games, Innout will not know this.
 Things probably don't work great if you work past midnight.
